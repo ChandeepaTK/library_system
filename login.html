@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login - School Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>📚 School Library</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="register.html" class="nav-link">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-form">
+            <h2>Login to Library System</h2>
+
+
+            <form id="loginForm" action="auth.php" method="POST">
+                <input type="hidden" name="action" value="login">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="email">
+                    <span class="error-message" id="emailError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="password">
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="userType">Login as:</label>
+                    <select id="userType" name="userType" required>
+                        <option value="">Select User Type</option>
+                        <option value="student">Student</option>
+                        <option value="librarian">Librarian</option>
+                    </select>
+                    <span class="error-message" id="userTypeError"></span>
+                </div>
+                <button type="submit" class="auth-button" id="loginButton">Login</button>
+            </form>
+            <p class="auth-switch">Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+
+</html>

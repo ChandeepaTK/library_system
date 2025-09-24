@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register - School Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="register.js" defer></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>📚 School Library</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="login.html" class="nav-link">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-form">
+            <h2>Member Register</h2>
+
+
+            <script>
+                const urlParams = new URLSearchParams(window.location.search);
+                const error = urlParams.get('error');
+                const success = urlParams.get('success');
+
+                if (error) {
+                    document.write('<div style="color: red; margin-bottom: 15px; padding: 10px; background: #ffebee; border-radius: 4px;">' + error + '</div>');
+                }
+
+                if (success) {
+                    document.write('<div style="color: green; margin-bottom: 15px; padding: 10px; background: #e8f5e8; border-radius: 4px;">' + success + '</div>');
+                }
+            </script>
+
+            <form id="registerForm" action="register.php" method="POST">
+                <div class="form-group">
+                    <label for="registerUsername">Username</label>
+                    <input type="text" id="registerUsername" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div class="form-group submit-group">
+                    <input type="submit" value="Sign Up" id="submit" class="auth-button">
+                    <input type="reset" value="Reset" id="reset" class="auth-button reset-button">
+                </div>
+            </form>
+            <p class="auth-switch">Already have an account? <a href="login.html" id="signin">Sign in</a>.</p>
+        </div>
+    </div>
+</body>
+
+</html>
